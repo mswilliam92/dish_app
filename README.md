@@ -1,4 +1,4 @@
-*** INICIANDO O DESENVOLVIMENTO DE ALGUMA TAREFA ***
+# INICIANDO O DESENVOLVIMENTO DE ALGUMA TAREFA
 
 git checkout main /  acessando o projeto principal
 
@@ -7,7 +7,7 @@ git pull / atualizando minha main
 git checkout -b nome_da_branch/ criando branch a partir da main 
 
 
-*** FINALIZANDO O DESENVOLVIMENTO DE ALGUMA TAREFA ***
+# FINALIZANDO O DESENVOLVIMENTO DE ALGUMA TAREFA 
 
 git status/ verificar o status do projeto
 
@@ -22,7 +22,7 @@ git status/ verificando se foi comitado com sucesso
 git push -u origin nome_da_branch
 
 
-*** CRIANDO PULL REQUEST ***
+# CRIANDO PULL REQUEST 
 
 Acessar o repositório do projeto la no GitHub
 
