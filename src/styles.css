@@ -34,3 +34,31 @@ html, body {
     width: 100%;
     margin-bottom: 16px;
 }
+
+.header {
+    z-index: 1000;
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-bottom: 30px;
+   
+}
+
+
+.detalhes {
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-left: 13px;
+    padding-right: 13px;
+    font-size: 14px;
+    color: #333;
+    font-weight: 1000;
+    line-height: 20px;
+    background-color: #fff;
+}
