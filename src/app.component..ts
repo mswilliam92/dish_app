@@ -1,19 +1,9 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <title>Cozinha</title>
-  <link rel="stylesheet" href="styles.css">
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+// app.component.ts
+import { Component } from '@angular/core';
 
-</head>
-<body>
-    <div class="header">
-        <p>Cozinha</p>
-    </div>
-
+@Component({
+  selector: 'app-root',
+  template: `
     <div class="container"> 
         <div class="pedido">
             <div class="pedido-numero">Pedido 03:</div>
@@ -27,7 +17,7 @@
                 <option>EM ESPERA</option>
                 <option>EM PREPARO</option>
                 <option>PRONTO</option>
-             </select>
+            </select>
         </div>
 
         <div class="pedido">
@@ -38,13 +28,13 @@
             </div>
             <div class="pedido-item">Batata</div>
             <div class="pedido-item">Coca Cola</div>    
-           <select class="status">
-             <option>EM ESPERA</option>
-             <option>EM PREPARO</option>
-             <option>PRONTO</option>
-          </select>
+            <select class="status">
+                <option>EM ESPERA</option>
+                <option>EM PREPARO</option>
+                <option>PRONTO</option>
+            </select>
         </div>     
-        
+
         <div class="pedido">
             <div class="pedido-numero">Pedido 04:</div>
             <div class="pedido-item">
@@ -53,15 +43,14 @@
             </div>
             <div class="pedido-item">Batata</div>
             <div class="pedido-item">Coca Cola</div>    
-           <select class="status">
-             <option>EM ESPERA</option>
-             <option>EM PREPARO</option>
-             <option>PRONTO</option>
-          </select>
+            <select class="status">
+                <option>EM ESPERA</option>
+                <option>EM PREPARO</option>
+                <option>PRONTO</option>
+            </select>
         </div>     
- 
     </div>
-    <script src="main.js" type="module"></script> <!-- Adicione esta linha -->
-</body>
-</html>
-
+  `,
+  styleUrls: ['./styles.css']
+})
+export class AppComponent {}
