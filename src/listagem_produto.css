@@ -10,3 +10,11 @@ body {
     margin: auto;
     padding: 22px;
 }
+
+.header {
+    background-color: #1565C0;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.5em;
+}
