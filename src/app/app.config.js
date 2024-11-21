@@ -7,6 +7,7 @@ var router_1 = require("@angular/router");
 var http_1 = require("@angular/common/http");
 var dish_list_component_1 = require("./components/dish-list/dish-list.component");
 var dish_form_component_1 = require("./components/dish-form/dish-form.component");
+
 var routes = [
     { path: '', component: dish_list_component_1.DishListComponent },
     { path: 'add-dish', component: dish_form_component_1.DishFormComponent },
