@@ -1,0 +1,72 @@
+/* Reset básico */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 410px;
+    margin: auto;
+    padding: 22px;
+}
+
+.container h2 {
+    background-color: #1565C0;
+    color: white;
+    padding: 12px;
+    height: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+
+}
+
+.item {
+    display: flex; /* Flexbox para alinhar descrição e preço */
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: white; /* Fundo branco para os itens */
+    margin-bottom: 10px; /* Espaço entre os itens */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    height: 55px;
+}
+
+.item label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    
+}
+
+.item label div {
+    display: flex;
+    flex-direction: column; /* Título e detalhes em coluna */
+}
+
+.item .price {
+    font-weight: bold;
+    color: #333;
+    margin-left: 10px; /* Espaçamento entre descrição e preço */
+    white-space: nowrap; /* Garante que o preço não quebre linha */
+}
+
+.confirmar-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.confirmar-btn:hover {
+    background-color: #218838;
+}
