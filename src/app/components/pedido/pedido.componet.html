@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="pedido.component.css">
 </head>
 <body>
-    <div class="container">
+    <!-- <div class="container">
         <h2>Pedido</h2>
         <div class="item">
             <label>
@@ -19,34 +19,37 @@
                 </div>
             </label>
             <span class="price">R$ 29,90</span>
-        </div>
-        <div class="item">
-            <label>
-                <input type="checkbox">
-                <div>
-                    <strong>Batata</strong>
-                </div>
-            </label>
-            <span class="price">R$ 9,90</span>
-        </div>
-        <div class="item">
-            <label>
-                <input type="checkbox">
-                <div>
-                    <strong>Água</strong>
-                </div>
-            </label>
-            <span class="price">R$ 4,90</span>
-        </div>
-        <div class="item">
+        </div> -->
+
+        <!-- <div class="item">
             <label>
                 <input type="checkbox" checked>
                 <div>
-                    <strong>Coca Cola</strong>
+                    <strong>Hamburger</strong>
+                    <br>
+                    <span>Pão, Salada, Tomate, Maionese, Hamburger 180g.</span>
                 </div>
             </label>
-            <span class="price">R$ 7,90</span>
-        </div>
-        <button class="confirmar-btn">CONFIRMAR PEDIDO</button>
+            <span class="price">R$ 29,90</span>
+        </div> -->
+        
+        
     </div>
     
+    <div class="product-list" *ngFor="let produto of dishes">
+
+          <div class="item">
+            <label>
+                <input type="checkbox" checked>
+                <div>
+                    <strong>Hamburger</strong>
+                    <br>
+                    <span>Pão, Salada, Tomate, Maionese, Hamburger 180g.</span>
+                </div>
+            </label>
+            <span class="price">R$ 29,90</span>
+        </div>
+
+    </div>
+
+    <button class="confirmar-btn">CONFIRMAR PEDIDO</button>
