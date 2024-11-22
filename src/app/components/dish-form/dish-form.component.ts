@@ -48,4 +48,27 @@ export class DishFormComponent implements OnInit {
       });
     }
   }
+
+  backDish() {
+    this.router.navigate(['/']);
+  }
+
+  deletDish() {
+    this.dishService.deleteDish(this.dish.id!).subscribe(() => {
+      this.router.navigate(['/']);
+    });
+  }
+
+  confirmDish() {
+    if (this.isEdit) {
+      this.dishService.updateDish(this.dish.id!, this.dish).subscribe(() => {
+        this.router.navigate(['/']);
+      });
+    } else {
+      this.dishService.createDish(this.dish).subscribe(() => {
+        this.router.navigate(['/']);
+      });
+    }
+  }
+
 }
