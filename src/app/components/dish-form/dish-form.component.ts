@@ -71,4 +71,10 @@ export class DishFormComponent implements OnInit {
     }
   }
 
+  formatPrice(): void {
+    if (this.dish.price) {
+      this.dish.price = parseFloat(this.dish.price.toFixed(2));
+    }
+  }
+
 }

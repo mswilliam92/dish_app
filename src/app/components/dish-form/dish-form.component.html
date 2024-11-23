@@ -6,17 +6,17 @@
   <form>
       <div class="product-details">
         
-          <label for="name">Nome:</label>
+          <label for="name">Descrição:</label>
           <input type="text" id="name" [(ngModel)]="dish.name" name="name" required>
 
-          <label for="price">Price:</label>
-          <input type="number" id="price" [(ngModel)]="dish.price" name="price" required>
+          <label for="price">Valor:</label>
+          <input type="number" id="price" [(ngModel)]="dish.price" name="price" required (ngModelChange)="formatPrice()">
 
-          <label for="description">Description:</label>
+          <label for="description">Observação:</label>
           <input type="text" id="description" [(ngModel)]="dish.description" name="description" required>
       </div>
       <div class="actions">
-          <button class="delete-button" type="button" (click)="deletDish()">✖︎</button>
+          <button class="delete-button" type="button" (click)="deletDish()">✘</button>
           <button class="confirm-button" type="button" (click)="confirmDish()">✔︎</button>
       </div>
   </form>

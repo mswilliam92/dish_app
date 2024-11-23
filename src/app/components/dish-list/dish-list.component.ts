@@ -32,4 +32,9 @@ export class DishListComponent implements OnInit {
       this.loadDishes();
     });
   }
+
+  cardapioDish() {
+    
+  }
+  
 }
