@@ -1,22 +1,19 @@
-<!-- src/app/components/dish-list/dish-list.component.html -->
 <div class="container">
   <header class="header">
+      <button [routerLink]="'/cardapio'" class="cardapio-button" type="button" (click)="cardapioDish()">✎</button>
       <h1>Produtos</h1>
   </header>
   <div class="product-list" *ngFor="let produto of dishes">
-
       <a [routerLink]="['/edit-dish', produto.id]" class="teste"> 
         <div class="product-item"> 
-          
           <div class="product-info">
               <strong>{{produto.name}}</strong>
               <span class="product-price">{{produto.price}}</span>
           </div>
-          <p>{{produto.description}}</p>
-      </div>
+            <p>{{produto.description}}</p>
+        </div>
       </a>
-
-  </div>
+    </div>
   <button [routerLink]="'/add-dish'" class="add-button">+</button>
 </div>
 
