@@ -1,19 +1,43 @@
+import { Injectable } from '@angular/core';
+import { Dish } from './dish.service';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 
-export interface Dish {
-    id?: number;
-    price: number;
+
+
+export interface Order {
+  id?: number;
+  status?: string; 
+  products?: Dish[];
+   // products?: Array<{id:number}>
+      
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+
+export class OrderService {
+
+    private apiUrl = 'http://localhost:8080/orders';
+  
+    constructor(private http: HttpClient) {}
+
+  getOrders(): Observable<Order[]> {
+    return this.http.get<Order[]>(this.apiUrl);
   }
 
+  getOrder(id: number): Observable<Order> {
+    return this.http.get<Order>(`${this.apiUrl}/${id}`);
+  }
 
+  createOrder(order: Order): Observable<Order> {
+    return this.http.post<Order>(this.apiUrl, order);
+  }
 
-//   {
-//     "id_order" : 1,
-//     "dishes" : [
-//       {
-//         "id" : 2,
-//         "dish_name" : "prato1",
-//         "dish_price" : 42.00
-//       }
-//     ]
-//   }
+  updateOrder(id: number, dish: Order): Observable<Order> {
+    return this.http.put<Order>(`${this.apiUrl}/${id}`, dish);
+  }
+
+}
