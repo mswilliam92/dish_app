@@ -6,9 +6,11 @@ import { Observable } from 'rxjs';
 
 export interface Dish {
   id?: number;
-  name: string;
-  description: string;
-  price: number;
+  name?: string;
+  description?: string;
+  status?: string;
+  price?: number;
+  checked?: boolean;
 }
 
 @Injectable({
@@ -38,4 +40,6 @@ export class DishService {
   deleteDish(id: number): Observable<Dish> {
     return this.http.delete<Dish>(`${this.apiUrl}/${id}`);
   }
+
+
 }

@@ -17,6 +17,7 @@ export class DishFormComponent implements OnInit {
   dish: Dish = {
     name: '',
     description: '',
+    status: '',
     price: 0
   };
   isEdit: boolean = false;

@@ -1,18 +1,17 @@
 <div class="container">
-    <header class="header">
-        <h1>Cardápio</h1>
-    </header>
-    <div class="product-list" *ngFor="let produto of dishes">
-          <div class="product-item"> 
-            <div class="product-info">
-                <input type="checkbox" checked>
-                <strong>{{produto.name}}</strong>
-                <span class="product-price">{{produto.price}}</span>
-            </div>
-
-              <p>{{produto.description}}</p>
-          </div>
+  <header class="header">
+    <h1>Cardápio</h1>
+  </header>
+  <div class="product-list" *ngFor="let dish of dishes">
+    <div class="product-item">
+      <div class="product-info">
+        <input type="checkbox" [(ngModel)]="dish.checked">
+        <strong>{{dish.name}}</strong>
+        <span class="product-price">{{dish.price}}</span>
+        <span class="product-price">{{dish.status}}</span>
+        <p>{{dish.description}}</p>
+      </div>
     </div>
-    <button class="confirmar-btn">CONFIRMAR PEDIDO</button>
   </div>
-  
+  <button class="confirmar-btn" (click)="createdOrder()">CONFIRMAR PEDIDO</button>
+</div>
