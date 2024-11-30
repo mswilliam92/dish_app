@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { Order, OrderService } from '../../services/order.service';
 import { FormsModule } from '@angular/forms';
 import { Dish, DishService } from '../../services/dish.service';
+
+
 
 
 @Component({
@@ -16,11 +18,13 @@ import { Dish, DishService } from '../../services/dish.service';
 
 export class CardapioComponent {
 
-  constructor(private orderService: OrderService, private dishService: DishService) {}
+  constructor(private orderService: OrderService, private dishService: DishService, private router: Router) {}
 
   dishes: Dish[] = [];
 
   orders: Order[] = [];
+
+  pedidoCriado: boolean = false; // Controla a exibição da mensagem
   
   ngOnInit(): void {
     // this.loadOrders();
@@ -45,29 +49,37 @@ export class CardapioComponent {
   }
 
    createdOrder() {
-
     const dishselected = this.filterSelectedDishes()
     const order : Order = {
       status : "aguardando preparo",
       products: dishselected.map((dish) => ({id: dish.id}))
     }
 
-    // this.orderService.createOrder (order)
     this.orderService.createOrder(order).subscribe((response) => { 
       console.log ("pedido criado", response)
-
-      // this.router.navigate(['/']);
     });
     console.log("request enviada para o back")
-    // this.router.navigate(['/']);
+    // this.showMessage()
     
- 
+      this.pedidoCriado = true; // Mostra a mensagem
+      // Oculta a mensagem após 3 segundos
+      setTimeout(() => {
+        this.pedidoCriado = false;
+        this.router.navigate(['/cozinha'],{state:{pedido:order}})
+      }, 3500);
+  }
 
-    // this.orderService.createOrder(this.dish.id!, this.dish).subscribe(() => {
-    //      this.router.navigate(['/']);
-    //    });
-    //  }
-   }
+   
+
+  // showMessage() {
+  //   this.pedidoCriado = true; // Mostra a mensagem
+  //   // Oculta a mensagem após 3 segundos
+  //   setTimeout(() => {
+  //     this.pedidoCriado = false;
+  //     this.router.navigate(['/cozinha'],{state:{pedido:order}})
+  //   }, 3500);
+    
+  // }
   
 }
 

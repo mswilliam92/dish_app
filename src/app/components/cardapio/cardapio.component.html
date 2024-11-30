@@ -1,17 +1,26 @@
 <div class="container">
   <header class="header">
-    <h1>Cardápio</h1>
+      <h1>Cardápio</h1>
   </header>
   <div class="product-list" *ngFor="let dish of dishes">
     <div class="product-item">
       <div class="product-info">
         <input type="checkbox" [(ngModel)]="dish.checked">
-        <strong>{{dish.name}}</strong>
-        <span class="product-price">{{dish.price}}</span>
-        <span class="product-price">{{dish.status}}</span>
-        <p>{{dish.description}}</p>
+          <strong>{{dish.name}}</strong>
+          <span class="product-price">{{dish.price}}</span>
+          <span class="product-price">{{dish.status}}</span>
       </div>
+        <p>{{dish.description}}</p>
     </div>
   </div>
   <button class="confirmar-btn" (click)="createdOrder()">CONFIRMAR PEDIDO</button>
+  <div class="container">
+    <div 
+      *ngIf="pedidoCriado" 
+      class="animate__animated animate__fadeIn pedido-mensagem">
+      PEDIDO CONFIRMADO COM SUCESSO! ✔️     
+    </div>
+  </div>
 </div>
+
+
