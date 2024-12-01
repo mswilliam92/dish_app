@@ -1,6 +1,6 @@
 <div class="container">
     <header class="header">
-        <h1>Cozinha</h1>
+        <h1>Entrega</h1>
     </header>
     <div class="product-item" *ngFor="let order of orders;">
         <h2 class="product-title">Pedido n.º{{order.numeroPedido}}:</h2>
@@ -10,11 +10,10 @@
         <p class="product-price">R$ {{valorTotal(order.products)}}</p>
         <div class="dropdown-container">
             <select class="status-dropdown" (change)="modifierStatus($event, order)">
-                <option value="em_espera">EM ESPERA</option>
-                <option value="em_preparo">EM PREPARO</option>
-                <option value="pronto">PRONTO</option>
+                <option value="em_espera">AGUARDANDO ENTREGA</option>
+                <option value="a_caminho">A CAMINHO</option>
+                <option value="entregue">ENTREGUE</option>
             </select>
         </div>
     </div>
 </div>
-
