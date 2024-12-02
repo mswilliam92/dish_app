@@ -1,8 +1,7 @@
-
 .container {
     max-width: 410px;
     margin: auto;
-    padding: 20px;
+    padding: 22px;
     box-sizing: border-box;
 }
 
@@ -22,7 +21,7 @@
 
 .header h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 28px;
     text-align: center;
 }
 

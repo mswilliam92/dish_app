@@ -10,13 +10,14 @@
     color: white;
     padding: 12px;
     align-items: center;
+    justify-content: center;
+    align-items: center; 
     height: 68px;
     display: flex;
     gap: 90px;
 }
 
-
-.header h1 {
+.container h1 {
     text-align: center;
     font-size: 28px;
     margin: 0;
@@ -24,7 +25,15 @@
 
 .product-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 10px;
+}
+
+.product-info strong {
+    font-size: 1em;
+    font-weight: bold;
+    flex: 1; 
 }
 
 .product-item {
@@ -47,6 +56,8 @@
 
 .product-price {
     font-weight: bold;
+    justify-content: space-between;
+    margin-left: 10px;
 }
 .confirmar-btn {
     width: 100%;
