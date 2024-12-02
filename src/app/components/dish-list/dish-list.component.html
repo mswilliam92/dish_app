@@ -1,7 +1,7 @@
 <div class="container">
   <header class="header">
-      <button [routerLink]="'/cardapio'" class="cardapio-button" type="button" (click)="cardapioDish()">✎</button>
       <h1>Produtos</h1>
+      <button [routerLink]="'/cardapio'" class="cardapio-button" type="button" (click)="cardapioDish()">✎</button>
   </header>
   <div class="product-list" *ngFor="let produto of dishes">
       <a [routerLink]="['/edit-dish', produto.id]" class="teste"> 
