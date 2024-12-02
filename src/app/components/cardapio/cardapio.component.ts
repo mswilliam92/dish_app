@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { Order, OrderService } from '../../services/order.service';
 import { FormsModule } from '@angular/forms';
 import { Dish, DishService } from '../../services/dish.service';
+
+
 
 
 @Component({
@@ -16,21 +18,17 @@ import { Dish, DishService } from '../../services/dish.service';
 
 export class CardapioComponent {
 
-  constructor(private orderService: OrderService, private dishService: DishService) {}
+  constructor(private orderService: OrderService, private dishService: DishService, private router: Router) {}
 
   dishes: Dish[] = [];
 
-  orders: Order[] = [];
+  pedidoCriado: boolean = false; // Controla a exibição da mensagem
   
   ngOnInit(): void {
-    // this.loadOrders();
-    this.loadDishes();  }
-
-  loadOrders() {
-    this.orderService.getOrders().subscribe((data: Order[]) => {
-      this.orders = data;
-    });
+    
+    this.loadDishes(); 
   }
+
 
   filterSelectedDishes () :Dish []{
     // const dishesSelected = this.orders.map((order) => order.products?.filter((dish) => dish.checked))
@@ -45,29 +43,28 @@ export class CardapioComponent {
   }
 
    createdOrder() {
-
     const dishselected = this.filterSelectedDishes()
     const order : Order = {
-      status : "aguardando preparo",
+      status : "AGUARDANDO PREPARO".toUpperCase(),
       products: dishselected.map((dish) => ({id: dish.id}))
     }
 
-    // this.orderService.createOrder (order)
     this.orderService.createOrder(order).subscribe((response) => { 
       console.log ("pedido criado", response)
-
-      // this.router.navigate(['/']);
-    });
-    console.log("request enviada para o back")
-    // this.router.navigate(['/']);
+      console.log("request enviada para o back")
+    // this.showMessage()
     
- 
+      this.pedidoCriado = true; // Mostra a mensagem
+      const state = {pedido:order}
+      // Oculta a mensagem após 3 segundos
+      setTimeout(() => {
+        this.pedidoCriado = false;
+        this.router.navigate(['/cozinha'],{state:state})
+      }, 2500);
+      
+    });
+    
+  }
 
-    // this.orderService.createOrder(this.dish.id!, this.dish).subscribe(() => {
-    //      this.router.navigate(['/']);
-    //    });
-    //  }
-   }
-  
 }
 

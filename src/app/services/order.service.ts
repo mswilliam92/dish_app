@@ -9,7 +9,8 @@ import { HttpClient } from '@angular/common/http';
 export interface Order {
   id?: number;
   status?: string; 
-  products?: Dish[];
+  products?: Dish[] | undefined;
+  numeroPedido? : number
    // products?: Array<{id:number}>
       
 }

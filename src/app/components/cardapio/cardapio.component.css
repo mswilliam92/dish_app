@@ -10,13 +10,14 @@
     color: white;
     padding: 12px;
     align-items: center;
+    justify-content: center;
+    align-items: center; 
     height: 68px;
     display: flex;
     gap: 90px;
 }
 
-
-.header h1 {
+.container h1 {
     text-align: center;
     font-size: 28px;
     margin: 0;
@@ -24,7 +25,15 @@
 
 .product-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 10px;
+}
+
+.product-info strong {
+    font-size: 1em;
+    font-weight: bold;
+    flex: 1; 
 }
 
 .product-item {
@@ -40,7 +49,6 @@
 }
 
 .product-item p {
-    
     margin: 6px 0 0 0;
     font-size: 0.9em;
     color: #666;
@@ -48,6 +56,8 @@
 
 .product-price {
     font-weight: bold;
+    justify-content: space-between;
+    margin-left: 10px;
 }
 .confirmar-btn {
     width: 100%;
@@ -65,3 +75,13 @@
 .confirmar-btn:hover {
     background-color: #218838;
 }
+
+.pedido-mensagem {
+    background-color: white;
+    width: 90%;
+    max-width: 320px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
