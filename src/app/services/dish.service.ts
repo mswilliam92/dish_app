@@ -19,7 +19,7 @@ export interface Dish {
 })
 export class DishService {
   // base URL monta dinamicamente a partir do environment
-  private readonly apiUrl = `${environment.apiUrl}`;
+  private readonly apiUrl = `https://comanda-digital-e8b8.onrender.com/dishes`;
 
   constructor(private http: HttpClient) {
     // só para confirmar qual URL está pegando em tempo de execução
