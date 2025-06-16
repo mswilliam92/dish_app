@@ -3,6 +3,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface Dish {
   id?: number;
@@ -17,9 +18,13 @@ export interface Dish {
   providedIn: 'root'
 })
 export class DishService {
-  private apiUrl = 'http://localhost:8080/dishes';
+  // base URL monta dinamicamente a partir do environment
+  private readonly apiUrl = `${environment.apiUrl}`;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    // só para confirmar qual URL está pegando em tempo de execução
+    console.log('>>> DishService API URL:', this.apiUrl);
+  }
 
   getDishes(): Observable<Dish[]> {
     return this.http.get<Dish[]>(this.apiUrl);
@@ -37,9 +42,7 @@ export class DishService {
     return this.http.put<Dish>(`${this.apiUrl}/${id}`, dish);
   }
 
-  deleteDish(id: number): Observable<Dish> {
-    return this.http.delete<Dish>(`${this.apiUrl}/${id}`);
+  deleteDish(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
-
-
 }
